@@ -1,0 +1,171 @@
+/* Game Details Section */
+#game-details {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(41, 41, 41, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Game Header */
+.game-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.game-header img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.game-header h1 {
+  font-size: 2rem;
+  margin: 15px 0 5px;
+  color: #ffcc00;
+}
+
+.levels,
+.type {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Description Text */
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+/* Comments Section */
+.details-comments {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.details-comments h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #79e482;
+}
+
+.details-comments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* No Comments Message */
+.no-comment {
+  font-size: 1rem;
+  color: #ff4444;
+  font-style: italic;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #ff6600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.button:hover {
+  background: #ff3300;
+}
+
+/* Add Comment */
+.create-comment {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.create-comment label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.create-comment textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  resize: vertical;
+}
+
+.create-comment textarea::placeholder {
+  color: #bbb;
+}
+
+.create-comment input[type="submit"] {
+  background: #79e482;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.create-comment input[type="submit"]:hover {
+  background: #56c06c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #game-details {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
