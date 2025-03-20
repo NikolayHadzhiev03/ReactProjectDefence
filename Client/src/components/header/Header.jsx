@@ -14,7 +14,7 @@ export default function Header(){
       {/* Logged-in users */}
       <div className="user-links">
         <li>
-          <a href="/create-game">Create Game</a>
+          <a href="/Create">Create Game</a>
         </li>
         <li>
           <a href="/logout">Logout</a>

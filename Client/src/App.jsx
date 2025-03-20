@@ -7,17 +7,25 @@ import Login from './components/login/Login'
 import Register from './components/register/register'
 import Catalog from './components/catalog/Catalog'
 import CreateGame from './components/create/Create'
-
+import {Routes , Route} from 'react-router'
 function App() {
 
 
   return (
     <div>
-      <Header></Header>
-      <main id="main-content">
-        <CreateGame></CreateGame>
-      </main>
-    </div>
+    <Header />
+    <main id="main-content">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/:gameId" element={<Details />} />
+        <Route path="/edit/:gameId" element={<EditGame />} />
+        <Route path="/create" element={<CreateGame />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </main>
+  </div>
   )
 }
 
