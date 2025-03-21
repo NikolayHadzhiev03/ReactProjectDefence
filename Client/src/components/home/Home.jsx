@@ -14,7 +14,7 @@ export default function Home(){
   <section id="games-list">
     <div className="game">
       <div className="image-wrap">
-        <img src="/home/220870.jpg" alt="Game One" />
+        <img src="/220870.jpg" alt="Game One" />
       </div>
       <h3>World of Warcraft</h3>
       <div className="description">
@@ -28,7 +28,7 @@ export default function Home(){
     </div>
     <div className="game">
       <div className="image-wrap">
-        <img src="/home/220870.jpg" alt="Game One" />
+        <img src="/220870.jpg" alt="Game One" />
       </div>
       <h3>World of Warcraft</h3>
       <div className="description">
