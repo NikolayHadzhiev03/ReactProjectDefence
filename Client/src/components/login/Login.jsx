@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router"; 
 import { useLogin } from "../../api/authapi";
-import { UserContext, useUserContext } from "../../context/UserContext";
+import { UserContext} from "../../context/UserContext";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -10,6 +10,7 @@ export default function Login() {
 
   const onLogin = async (event) => {
     event.preventDefault(); 
+    
     const formData = new FormData(event.target);
     const values = Object.fromEntries(formData.entries());
 
