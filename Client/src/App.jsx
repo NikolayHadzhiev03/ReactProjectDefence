@@ -8,6 +8,7 @@ import Register from './components/register/register'
 import Catalog from './components/catalog/Catalog'
 import CreateGame from './components/create/Create'
 import {Routes , Route} from 'react-router'
+import Logout from './components/logout/Logout'
 function App() {
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/create" element={<CreateGame />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+      <Route path='/logout' element={<Logout></Logout>}></Route>
       </Routes>
     </main>
   </div>
