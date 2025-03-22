@@ -1,39 +1,31 @@
-export default function Catalog(){
-    return (
-        <>
-  <section id="catalog-page">
-    <h1>All Games</h1>
-    <div className="allGames">
-      <div className="allGames-info">
-        <img src="/220870.jpg" />
-        <h6>Action</h6>
-        <h2>Cover Fire</h2>
-        <a href="#" className="details-button">
-          Details
-        </a>
-      </div>
-    </div>
-    <div className="allGames">
-      <div className="allGames-info">
-        <img src="/220870.jpg" />
-        <h6>Action</h6>
-        <h2>Zombie lang</h2>
-        <a href="#" className="details-button">
-          Details
-        </a>
-      </div>
-    </div>
-    <div className="allGames">
-      <div className="allGames-info">
-        <img src="/220870.jpg" />
-        <h6>Action</h6>
-        <h2>MineCraft</h2>
-        <a href="#" className="details-button">
-        </a>
-      </div>
-    </div>
-    <h3 className="no-articles">No articles yet</h3>
-  </section> 
-</>
-);
+import { useGames } from "../../api/gameapi";
+import { Link } from "react-router"; 
+
+export default function Catalog() {
+  const {games} = useGames();
+
+
+
+  return (
+    <section id="catalog-page">
+      <h1>All Games</h1>
+
+      {games.length > 0 ? (
+        games.map((game) => (
+          <div className="allGames" key={game.id}>
+            <div className="allGames-info">
+              <img src={game.imageUrl} alt={game.title} />
+              <h6>{game.title}</h6>
+              <h2>{game.category}</h2>
+              <Link to={`/games/${game.id}`} className="details-button">
+                Details
+              </Link>
+            </div>
+          </div>
+        ))
+      ) : (
+        <h3 className="no-articles">No games available</h3>
+      )}
+    </section>
+  );
 }
