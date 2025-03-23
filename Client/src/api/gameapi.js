@@ -53,3 +53,10 @@ export const useEditGame = () => {
         edit,
     }
 };
+
+export const useDeleteGame = () => {
+    const { request } = useAuth();
+    const deleteGame = (gameId) =>
+        request.delete(`${baseUrl}/${gameId}`);
+    return {deleteGame,}
+};

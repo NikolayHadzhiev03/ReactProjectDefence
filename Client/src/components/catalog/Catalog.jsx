@@ -10,10 +10,10 @@ export default function Catalog() {
     <section id="catalog-page">
       <h1>All Games</h1>
 
-      {games.length > 0 ? (
-        games.map((game) => (
-          <div className="allGames" key={game._id}>
-            <div className="allGames-info">
+      <div className="allGames">
+        {games.length > 0 ? (
+          games.map((game) => (
+            <div className="allGames-info" key={game._id}>
               <img src={game.imageUrl} alt={game.title} />
               <h6>{game.title}</h6>
               <h2>{game.category}</h2>
@@ -21,11 +21,11 @@ export default function Catalog() {
                 Details
               </Link>
             </div>
-          </div>
-        ))
-      ) : (
-        <h3 className="no-articles">No games available</h3>
-      )}
+          ))
+        ) : (
+          <h3 className="no-articles">No games available</h3>
+        )}
+      </div>
     </section>
   );
 }

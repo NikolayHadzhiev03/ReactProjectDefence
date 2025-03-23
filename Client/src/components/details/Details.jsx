@@ -1,5 +1,5 @@
-import { Navigate, useParams, Link } from "react-router";
-import { useCurrentGame } from "../../api/gameapi";
+import { useNavigate, useParams, Link } from "react-router";
+import { useCurrentGame, useDeleteGame } from "../../api/gameapi";
 import useAuth from "../../hooks/useAuth";
 
 
@@ -7,9 +7,14 @@ export default function Details(){
   const  {username , userId} = useAuth();
    const {gameId} = useParams();
    const  {game}  = useCurrentGame(gameId);
+   const { deleteGame } = useDeleteGame();
+   const navigate = useNavigate();
 
+   const delHandler = async ()=>{
+        await deleteGame(gameId);
+    navigate('/catalog')
+   }  
   
-
   if (!game) return <p>Loading or game not found...</p>;
     return (
         <section id="game-details">
@@ -44,9 +49,9 @@ export default function Details(){
             <Link to={`/edit/${gameId}`} className="button">
               Edit
             </Link>
-            <a href="#" className="button">
+            <button  className="button" onClick={delHandler}> 
               Delete
-            </a>
+            </button>
           </div>
         )}
   </div>
