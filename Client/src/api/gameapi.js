@@ -42,3 +42,14 @@ return {
     game,
 }
 }
+//edditing the game
+export const useEditGame = () => {
+    const { request } = useAuth();
+
+    const edit = (gameId, gameData) =>
+        request.put(`${baseUrl}/${gameId}`, { ...gameData, _id: gameId });
+
+    return {
+        edit,
+    }
+};

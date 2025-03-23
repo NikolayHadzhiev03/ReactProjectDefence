@@ -1,4 +1,4 @@
-import { Navigate, useParams } from "react-router";
+import { Navigate, useParams, Link } from "react-router";
 import { useCurrentGame } from "../../api/gameapi";
 import useAuth from "../../hooks/useAuth";
 
@@ -6,7 +6,7 @@ import useAuth from "../../hooks/useAuth";
 export default function Details(){
   const  {username , userId} = useAuth();
    const {gameId} = useParams();
-   const  { game }  = useCurrentGame(gameId);
+   const  {game}  = useCurrentGame(gameId);
 
   
 
@@ -41,9 +41,9 @@ export default function Details(){
       
     {game._ownerId === userId && (
           <div className="buttons">
-            <a href="#" className="button">
+            <Link to={`/edit/${gameId}`} className="button">
               Edit
-            </a>
+            </Link>
             <a href="#" className="button">
               Delete
             </a>
