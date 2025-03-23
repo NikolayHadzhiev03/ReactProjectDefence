@@ -1,20 +1,19 @@
-import { useParams } from "react-router";
-import useAuth from "../../hooks/useAuth";
+import { useNavigate, useParams } from "react-router";
 import { useCurrentGame, useEditGame } from "../../api/gameapi";
-import { Navigate } from "react-router";
+
 
 export default function EditGame(){
+const navigate = useNavigate();
+const { gameId } = useParams();
+const  {game } = useCurrentGame(gameId); 
+const { edit } = useEditGame();
 
-  const { userId} = useAuth();
-  const {gameId} = useParams();
-  const  {game} = useCurrentGame(gameId);
-  const {edit} = useEditGame();
-
+ 
   const onEdit = async (formData)=>{
   const  gameData = Object.fromEntries(formData);
     
     await edit(gameId, gameData);
-    Navigate(`/catalog/${game._id}`);
+    navigate(`/catalog/${game._id}`);
   }
   
     return (

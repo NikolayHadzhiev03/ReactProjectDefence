@@ -31,17 +31,17 @@ export const useCreateGame = () => {
     }
 }
 // Fetching the current game with game id
-export const useCurrentGame = (gameid)=>{
-const [game,setgame]= useState();
-useEffect(()=> {
-    request.get(`${baseUrl}/${gameid}`)
-    .then(setgame);
-},[gameid])
-
-return {
-    game,
-}
-}
+export const useCurrentGame = (gameId) => {
+    const [game, setGame] = useState({}); 
+  
+    useEffect(() => {
+      request.get(`${baseUrl}/${gameId}`).then((data) => {
+        setGame(data || {}); 
+      });
+    }, [gameId]);
+  
+    return { game };
+  };
 //edditing the game
 export const useEditGame = () => {
     const { request } = useAuth();
