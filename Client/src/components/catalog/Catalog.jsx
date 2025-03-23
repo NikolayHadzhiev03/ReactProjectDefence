@@ -12,12 +12,12 @@ export default function Catalog() {
 
       {games.length > 0 ? (
         games.map((game) => (
-          <div className="allGames" key={game.id}>
+          <div className="allGames" key={game._id}>
             <div className="allGames-info">
               <img src={game.imageUrl} alt={game.title} />
               <h6>{game.title}</h6>
               <h2>{game.category}</h2>
-              <Link to={`/games/${game.id}`} className="details-button">
+              <Link to={`/catalog/${game._id}`} className="details-button">
                 Details
               </Link>
             </div>
