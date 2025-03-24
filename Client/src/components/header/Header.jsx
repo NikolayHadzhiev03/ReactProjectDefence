@@ -16,6 +16,9 @@ export default function Header() {
           <li>
             <Link to="/catalog">All Games</Link>
           </li>
+          <li>
+                <Link to="/search">Search</Link>
+              </li>
           {isAuthenticated ? (
             <div className="user-links">
               <li>

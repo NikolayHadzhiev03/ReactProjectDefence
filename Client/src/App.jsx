@@ -9,11 +9,13 @@ import Catalog from './components/catalog/Catalog'
 import Create from './components/create/Create'
 import {Routes , Route} from 'react-router'
 import Logout from './components/logout/Logout'
+import Search from './components/search/Search'
 function App() {
 
 
   return (
-    <div>
+    <div  >
+      <div className="app-container" ></div>
     <Header />
     <main id="main-content">
       <Routes>
@@ -25,8 +27,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       <Route path='/logout' element={<Logout></Logout>}></Route>
+      <Route path='/search' element={<Search></Search>}></Route>
       </Routes>
     </main>
+   
   </div>
   )
 }
