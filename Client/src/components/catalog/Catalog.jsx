@@ -17,7 +17,7 @@ export default function Catalog() {
               <img src={game.imageUrl} alt={game.title} />
               <h6>{game.title}</h6>
               <h2>{game.category}</h2>
-              <Link to={`/catalog/${game._id}`} className="details-button">
+              <Link to={`/catalog/${game._id}`} className="button">
                 Details
               </Link>
             </div>

@@ -41,7 +41,7 @@ export default function Details(){
         </li>
       </ul>
 
-      <p className="no-comment">No comments.</p>
+  {/* {<p className="no-comment">No comments.</p>} */}
     </div>
       
     {game._ownerId === userId && (
@@ -56,14 +56,13 @@ export default function Details(){
         )}
   </div>
 
-  <article className="create-comment">
+  {userId && (<article className="create-comment">
     <label>Add new comment:</label>
     <form className="form">
       <textarea name="comment" placeholder="Comment......" defaultValue={""} />
       <input className="btn submit" type="submit" defaultValue="Add Comment" />
     </form>
-  </article>
+  </article>)}
 </section>
-
     );
 }
