@@ -3,7 +3,7 @@ import useAuth from "../../hooks/useAuth";
 
 export default function Header() {
   const { isAuthenticated } = useAuth(); 
-
+  const {username } = useAuth();
   return (
     <header>
       <nav>
@@ -26,6 +26,9 @@ export default function Header() {
               </li>
               <li>
                 <Link to="/logout">Logout</Link>
+              </li>
+              <li>
+                <Link to="/profile">{username}'s profile</Link>
               </li>
             </div>
           ) : (
