@@ -4,13 +4,21 @@ import { Link } from "react-router";
 
 
 export default function Search() {
-  const [searchTerm, setSearchTerm] = useState("");
+
+    const [searchTerm, setSearchTerm] = useState("");
   const {games} = useGames(); 
 
-  const filteredGames = games.filter(game =>
-    game.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
+  if(games.code === 404){
+    return <p className="no-results">No games found.</p>
+  }
+ 
+  const filteredGames = games?.filter((game) =>
+    game.title.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || [];
+  
+ 
+ 
   return (
     <section id="search-page">
       <div className="search-container">

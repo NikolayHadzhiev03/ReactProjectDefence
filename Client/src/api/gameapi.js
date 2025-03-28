@@ -10,7 +10,7 @@ const baseUrl = 'http://localhost:3030/data/games';
 //Fetcha ll games
 export const useGames = () => { 
     const  [games ,setGames] = useState([]);
-       
+
     useEffect(()=> {
         request.get(baseUrl)
         .then(setGames)
