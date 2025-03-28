@@ -11,6 +11,7 @@ import {Routes , Route} from 'react-router'
 import Logout from './components/logout/Logout'
 import Search from './components/search/Search'
 import Profile from './components/profilePage/Profile'
+import FOFPage from './components/404Page/404page'
 function App() {
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<FOFPage />} />
       <Route path='/logout' element={<Logout></Logout>}></Route>
       <Route path='/search' element={<Search></Search>}></Route>
       </Routes>

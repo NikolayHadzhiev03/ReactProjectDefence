@@ -1,5 +1,6 @@
 .profile-container {
-  max-width: 900px;
+  width: 900px;
+  height: 500px;
   margin: 50px auto;
   padding: 30px;
   background: rgba(41, 41, 41, 0.9);
