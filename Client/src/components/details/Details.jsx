@@ -154,6 +154,8 @@ export default function Details() {
               name="comment"
               placeholder="Comment..."
               value={commentText}
+              required
+              minLength={3}
               onChange={(e) => setCommentText(e.target.value)}
             />
             <input className="btn submit" type="submit" value="Add Comment" />

@@ -1,13 +1,11 @@
 import { useNavigate, useParams } from "react-router";
 import { useCurrentGame, useEditGame } from "../../api/gameapi";
 
-
 export default function EditGame(){
 const navigate = useNavigate();
 const { gameId } = useParams();
 const  {game } = useCurrentGame(gameId); 
 const { edit } = useEditGame();
-
  
   const onEdit = async (formData)=>{
   const  gameData = Object.fromEntries(formData);
@@ -27,7 +25,9 @@ const { edit } = useEditGame();
         id="edit-title"
         name="title"
         defaultValue={game.title}
-        required=""
+        required
+        minLength="3"
+        maxLength="100"
       />
       <label htmlFor="edit-category">Category:</label>
       <input
@@ -35,7 +35,7 @@ const { edit } = useEditGame();
         id="edit-category"
         name="category"
         defaultValue={game.category}
-        required=""
+        required
       />
       <label htmlFor="edit-imageUrl">Image URL:</label>
       <input
@@ -43,14 +43,18 @@ const { edit } = useEditGame();
         id="edit-imageUrl"
         name="imageUrl"
         defaultValue={game.imageUrl}
-        required=""
+        required
+        minLength="3"
+        maxLength="100"
       />
       <label htmlFor="edit-summary">Summary:</label>
       <textarea
         name="summary"
         id="edit-summary"
         placeholder="Edit game summary..."
-        required=""
+        required
+        minLength="3"
+        maxLength="100"
         defaultValue={game.summary}
       />
       <input className="btn submit" type="submit" defaultValue="Edit Game" />

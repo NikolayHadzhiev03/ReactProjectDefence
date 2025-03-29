@@ -28,7 +28,9 @@ export default function CreateGame(){
               id="title"
               name="title"
               placeholder="Enter game title..."
-              required=""
+              required
+              minLength="3"
+              maxLength="100"
             />
             <label htmlFor="category">Category:</label>
             <input
@@ -36,7 +38,9 @@ export default function CreateGame(){
               id="category"
               name="category"
               placeholder="Enter game category..."
-              required=""
+              required
+               minLength="3"
+               maxLength="100"
             />
             <label htmlFor="imageUrl">Image URL:</label>
             <input
@@ -44,14 +48,18 @@ export default function CreateGame(){
               id="imageUrl"
               name="imageUrl"
               placeholder="Enter image URL..."
-              required=""
+              required
+               minLength="3"
+               maxLength="100"
             />
             <label htmlFor="create-summary">Summary:</label>
             <textarea
               name="summary"
               id="create-summary"
               placeholder="Enter game summary..."
-              required=""
+              required
+              minLength="3"
+               maxLength="100"
               defaultValue={""}
             />
             <input
