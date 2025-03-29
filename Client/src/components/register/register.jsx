@@ -11,7 +11,6 @@ const { userLoginHandler } = useUserContext();
 
     const onRegister = async(formData) => {
       const {email ,password } = Object.fromEntries(formData);
-      console.log(formData);
       
 
       const repass = formData.get("confirm-password");

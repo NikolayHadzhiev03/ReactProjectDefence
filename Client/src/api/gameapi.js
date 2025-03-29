@@ -60,3 +60,18 @@ export const useDeleteGame = () => {
         request.delete(`${baseUrl}/${gameId}`);
     return {deleteGame,}
 };
+
+export const useOwnerGames = () => {
+    const { _id: userId, request } = useAuth();
+    const [ownerGames, setOwnerGames] = useState([]);
+
+    useEffect(() => {
+        if (!userId) return;
+
+        // Fetch games that belong to the current user
+        request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22`)
+            .then((data) => setOwnerGames(data || []));
+    }, [userId]);
+
+    return { ownerGames };
+};
