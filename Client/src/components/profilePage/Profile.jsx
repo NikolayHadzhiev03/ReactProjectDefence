@@ -6,10 +6,10 @@ export default function Profile() {
   const { ownerGames} = useOwnerGames();
 
   return (
-    <div className="profile-container">
+    <div className="profile-cont">
       <h2>Profile Page</h2>
-      <div className="profile-card">
-        <div className="profile-image-container">
+      <div className="profile-cards">
+        <div className="profile-image-cont">
           <img 
             src="/profilepicture.png"
             alt="Profile" 
@@ -18,7 +18,7 @@ export default function Profile() {
         </div>
         <p><strong>Email:</strong> {user.email}</p>
         <h2>Your Games</h2>
-        <div className="allGames">
+        <div className="everyGames">
         {ownerGames.length > 0 ? (
           ownerGames.map((game) => (
             <div className="allGames-info" key={game._id}>

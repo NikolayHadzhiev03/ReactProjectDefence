@@ -1,3 +1,4 @@
+/* Global Body Styles */
 body {
   font-family: Arial, sans-serif;
   color: #ffffff;
@@ -11,6 +12,7 @@ body {
   background: rgba(0, 0, 0, 0.9);
 }
 
+/* Background Blur */
 .background-blur {
   position: fixed;
   top: 0;
@@ -52,9 +54,11 @@ body {
   text-align: left;
   font-size: 1rem;
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
-.auth input {
+.auth input,
+.auth textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -63,12 +67,15 @@ body {
   font-size: 1rem;
   background: #222;
   color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.auth input:focus {
+.auth input:focus,
+.auth textarea:focus {
   border-color: #ffcc00;
-  outline: none;
   box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+  background: #333;
+  outline: none;
 }
 
 .auth input[type="submit"] {
@@ -77,16 +84,16 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   border: none;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   transition: background 0.3s ease;
+  font-weight: bold;
 }
 
 .auth input[type="submit"]:hover {
   background: #ff3300;
 }
 
-/* Register/Login Link */
 .auth .field {
   margin-top: 15px;
   font-size: 1rem;
@@ -150,6 +157,9 @@ body {
   text-align: center;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.333% - 20px);
+  max-width: 300px;
+  box-sizing: border-box;
 }
 
 .game:hover {
@@ -205,27 +215,11 @@ body {
   justify-content: center;
 }
 
-.game {
-  width: calc(33.333% - 20px);
-  max-width: 300px;
-  box-sizing: border-box;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
-  }
-
   .auth {
     width: 90%;
+    padding: 20px;
   }
 
   #games-list {
@@ -236,90 +230,5 @@ body {
   .game {
     width: 100%;
     max-width: 400px;
-  }
-}
-
-/* General Auth Form Styling */
-.auth {
-  background: rgba(41, 41, 41, 0.9);
-  padding: 30px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  text-align: center;
-  margin: 50px auto;
-}
-
-.auth h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #ffcc00;
-}
-
-/* Labels */
-.auth label {
-  display: block;
-  text-align: left;
-  font-size: 1rem;
-  margin: 10px 0 5px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-/* Input Fields */
-.auth input,
-.auth textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  background: #222;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-
-.auth input::placeholder,
-.auth textarea::placeholder {
-  color: #bbb;
-}
-
-/* Input Focus Effect */
-.auth input:focus,
-.auth textarea:focus {
-  border-color: #ffcc00;
-  background: #333;
-  outline: none;
-}
-
-/* Submit Button */
-.auth input[type="submit"] {
-  background: #ff6600;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  transition: background 0.3s ease-in-out;
-  font-weight: bold;
-}
-
-.auth input[type="submit"]:hover {
-  background: #ff3300;
-}
-
-/* Textarea Styling */
-.auth textarea {
-  height: 100px;
-  resize: vertical;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .auth {
-    width: 90%;
-    padding: 20px;
   }
 }
