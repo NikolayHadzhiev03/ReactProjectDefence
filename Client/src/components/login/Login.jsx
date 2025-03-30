@@ -41,7 +41,9 @@ export default function Login() {
         return;  
       }
       userLoginHandler(authData);
-      navigate("/"); 
+      setTimeout(() => {
+        navigate("/catalog");
+      }, 1); 
       
     } catch (error) {
       console.error("Login error:", error);

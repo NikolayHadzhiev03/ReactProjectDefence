@@ -12,6 +12,8 @@ import Logout from './components/logout/Logout'
 import Search from './components/search/Search'
 import Profile from './components/profilePage/Profile'
 import FOFPage from './components/404Page/404page'
+import GuestRoute from './guards/Userguard'
+import IsAuthguard from './guards/isAuthguard'
 function App() {
 
 
@@ -24,13 +26,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:gameId" element={<Details />} />
-        <Route path="/edit/:gameId" element={<EditGame />} />
-        <Route path="/create" element={<Create />} />
+        <Route element={<GuestRoute />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
+         </Route>
+         <Route element={<IsAuthguard />}>
+         <Route path="/create" element={<Create />} />
+         <Route path="/edit/:gameId" element={<EditGame />} />
+         <Route path="/profile" element={<Profile />} />
+         <Route path='/logout' element={<Logout></Logout>}></Route>
+         </Route>
         <Route path="*" element={<FOFPage />} />
-      <Route path='/logout' element={<Logout></Logout>}></Route>
       <Route path='/search' element={<Search></Search>}></Route>
       </Routes>
     </main>
