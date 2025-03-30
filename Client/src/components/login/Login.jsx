@@ -60,7 +60,7 @@ export default function Login() {
           {errors.email && <p className="error">{errors.email}</p>}
           <label htmlFor="login-password">Password:</label>
           <input type="password" id="login-password" name="password" required />
-          {errors.password && <p className="error">{errors.password}</p>}
+          {errors.password && <p  className="error">{errors.password}</p>}
           <input type="submit" className="btn submit" value="Login" />
           <p className="field">
             <span>If you don't have a profile, click <Link to="/register">here</Link></span>

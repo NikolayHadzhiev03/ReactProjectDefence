@@ -98,10 +98,10 @@ export default function Details() {
                         value={editText}
                         onChange={(e) => setEditText(e.target.value)}
                       />
-                      <button  className="buttons" onClick={() => editCommentHandler(comment._id)}>
+                      <button  className="button" onClick={() => editCommentHandler(comment._id)}>
                         Save
                       </button>
-                      <button  className="buttons" onClick={() => setEditMode(null)}>Cancel</button>
+                      <button  className="button" onClick={() => setEditMode(null)}>Cancel</button>
                     </>
                   ) : (
                     <>
@@ -109,7 +109,7 @@ export default function Details() {
                       <p>Author: {comment.author}</p>
                       {comment.author === email && (
                         <>
-                          <button className="buttons"
+                          <button className="button"
                             onClick={() => {
                               setEditMode(comment._id);
                               setEditText(comment.text);
@@ -117,7 +117,7 @@ export default function Details() {
                           >
                             Edit
                           </button>
-                          <button className="buttons"
+                          <button className="button"
                             onClick={() => deleteCommentHandler(comment._id)}
                           >
                             Delete
