@@ -37,10 +37,12 @@ External CSS for styling.
 
 ## How to Run
 
-Start the server using the command:
+How to Run
+
+Start the server by navigating to the server directory and using the command:
 
 node server.js
 
-Run the application with:
+Go to the client directory and run the application with:
 
 npm run dev
