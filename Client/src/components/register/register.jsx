@@ -48,7 +48,9 @@ const onRegister = async (event) => {
   try {
     const authData = await register(values.email, values.password);
     userLoginHandler(authData);
-    navigate("/");
+    setTimeout(() => {
+      navigate("/catalog");
+    }, 1); 
   } catch (error) {
     console.error("Registration error:", error);
     setErrors({ email: "", password: "An error occurred. Please try again." });
