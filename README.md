@@ -30,10 +30,10 @@ Personalized profile page showing the user's created games.
 
 ## Technologies Used
 
-React for the frontend
-React Router for navigation
-Context API for state management
-External CSS for styling
+React for the frontend.
+React Router for navigation.
+Context API for state management.
+External CSS for styling.
 
 ## How to Run
 
