@@ -84,8 +84,9 @@
 }
 
 .no-results {
-  font-size: 1.2rem;
-  color: #ff4444;
   text-align: center;
-  margin-top: 20px;
+  margin: 10rem;
+  font-size: 2rem;
+  color: rgb(250, 0, 0);
+  padding: 2rem;
 }
